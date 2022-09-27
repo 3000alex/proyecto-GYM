@@ -1,0 +1,85 @@
+<!--
+ Copyright (c) 2014, 2022, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+  <h1>Dashboard Content Area</h1>
+  <div>
+    <oj-table id="table" class="demo-table-container" aria-label="Tabla de atención"
+    data="[[pagingDataProviderRutinas]]" columns-default.sortable="disabled" columns='[{"headerText": "ID", "resizable": "enabled","width":"auto"},
+                {"headerText": "Atención A", "style": "white-space:normal;word-wrap:break-word;vertical-align: middle;"},
+                {"headerText": "Persona Atendida", "style": "white-space:normal;word-wrap:break-word;vertical-align: middle;"},
+                {"headerText": "Administrativo(a)", "style": "white-space:normal;word-wrap:break-word;vertical-align: middle;"},
+                {"headerText": "Tipo de Atención", "style": "white-space:normal;word-wrap:break-word;vertical-align: middle;"},
+                {"headerText": "Estatus", "style": "white-space:normal;word-wrap:break-word;vertical-align: middle;"},
+                {"headerText": "Asunto", "style": "white-space:normal;word-wrap:break-word;vertical-align: middle;"},
+                {"headerText": "Acciones"}]' style="width: 100%;">
+
+    <template slot="rowTemplate" data-oj-as="row">
+      <tr>
+        <td>
+          <oj-bind-text value="[[row.data.id_incidencia]]"></oj-bind-text>
+        </td>
+
+        <td>
+          <oj-bind-text value="[[row.data.nombre_persona_atendida]]"></oj-bind-text>
+        </td>
+
+        <td>
+          <oj-bind-text value="[[row.data.tipo_usuario]]"></oj-bind-text>
+        </td>
+
+        <td>
+          <oj-bind-text value="[[row.data.nombre_administrativo]]"></oj-bind-text>
+        </td>
+
+        <td>
+          <oj-bind-text value="[[row.data.tipo_atencion]]"></oj-bind-text>
+        </td>
+
+        <td>
+          <oj-bind-text value="[[row.data.estatus]]"></oj-bind-text>
+        </td>
+
+        <td>
+          <oj-bind-text value="[[row.data.asunto]]"></oj-bind-text>
+        </td>
+
+        <td>
+          <div>
+            <oj-button display="icons" id="btnMostrar" on-oj-action=""><span slot="startIcon"
+                class="oj-ux-ico-view"></span></oj-button>
+            <oj-button
+              :disabled="[[ row.data.estatus == 'Cerrada' || row.data.estatus == 'Finalizado' || row.data.estatus == 'Rechazado' ]]"
+              display="icons" id="btnEditar" on-oj-action=""><span slot="startIcon"
+                class="oj-ux-ico-edit-box"></span></oj-button>
+            <oj-button
+              :disabled="[[ row.data.estatus == 'Cerrada' || row.data.estatus == 'Finalizado' || row.data.estatus == 'Rechazado' ]]"
+              display="icons" id="btnEliminar" on-oj-action=""><span slot="startIcon"
+                class="oj-ux-ico-close-circle"></span></oj-button>
+          </div>
+        </td>
+
+      </tr>
+
+    </template>
+
+    <template slot="noData">
+      <div class="oj-flex oj-sm-align-items-center">
+        <div class="oj-flex oj-sm-align-items-center oj-sm-flex-direction-column oj-sm-width-full">
+          <span class="oj-sm-padding-2x oj-typography-body-xl">No existe ningun registro</span>
+        </div>
+      </div>
+    </template>
+
+    <oj-paging-control id="pagingIncidencias" data="[[pagingDataProviderRutinas]]" page-size="6" slot="bottom"
+      translations.full-msg-item="Registro {pageTo} de {pageMax}"
+      translations.full-msg-item-approx=" {pageTo} de {pageMax} registros"
+      translations.full-msg-item-at-least=" {pageTo} de {pageMax} registros" translations.label-acc-nav-page="Registro"
+      translations.label-nav-input-page="Registro" translations.tip-nav-input-page="Registro"
+      translations.tip-nav-page-link="Ir al registro {pageNum}">
+    </oj-paging-control>
+  </oj-table>
+  </div>
+</div>

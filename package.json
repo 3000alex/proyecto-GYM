@@ -1,0 +1,19 @@
+{
+  "name": "proyecto-GYM",
+  "version": "1.0.0",
+  "description": "An Oracle JavaScript Extension Toolkit(JET) web app",
+  "dependencies": {
+    "@oracle/oraclejet": "~13.0.0",
+    "node-sass": "^7.0.3"
+  },
+  "devDependencies": {
+    "@oracle/oraclejet-tooling": "^13.0.1",
+    "fs-extra": "^8.1.0",
+    "glob": "7.2.0",
+    "underscore": "^1.10.2"
+  },
+  "engines": {
+    "node": ">=12.21.0"
+  },
+  "private": true
+}

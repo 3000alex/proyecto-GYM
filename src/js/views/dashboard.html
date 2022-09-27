@@ -7,7 +7,8 @@
   <h1>Dashboard Content Area</h1>
   <div>
     <oj-table id="table" class="demo-table-container" aria-label="Tabla de atención"
-    data="[[pagingDataProviderRutinas]]" columns-default.sortable="disabled" columns='[{"headerText": "ID", "resizable": "enabled","width":"auto"},
+    data="[[pagingDataProviderRutinas]]" columns-default.sortable="disabled" columns='[
+                {"headerText": "Dia", "resizable": "enabled","width":"auto"},
                 {"headerText": "Atención A", "style": "white-space:normal;word-wrap:break-word;vertical-align: middle;"},
                 {"headerText": "Persona Atendida", "style": "white-space:normal;word-wrap:break-word;vertical-align: middle;"},
                 {"headerText": "Administrativo(a)", "style": "white-space:normal;word-wrap:break-word;vertical-align: middle;"},
@@ -19,7 +20,7 @@
     <template slot="rowTemplate" data-oj-as="row">
       <tr>
         <td>
-          <oj-bind-text value="[[row.data.id_incidencia]]"></oj-bind-text>
+          <oj-bind-text value="[[row.data.dia]]"></oj-bind-text>
         </td>
 
         <td>

@@ -20,43 +20,43 @@ define(["knockout",'ojs/ojarraydataprovider', 'ojs/ojpagingtabledatasource',
 
       self.rutinas = ko.observableArray([
         {
-          dia:'',
+          dia:'Lunes',
           musculo:'',
           repeticiones:'',
           set:''
         },
         {
-          dia:'',
+          dia:'Martes',
           musculo:'',
           repeticiones:'',
           set:''
         },
         {
-          dia:'',
+          dia:'Miercoles',
           musculo:'',
           repeticiones:'',
           set:''
         },
         {
-          dia:'',
+          dia:'Jueves',
           musculo:'',
           repeticiones:'',
           set:''
         },
         {
-          dia:'',
+          dia:'Viernes',
           musculo:'',
           repeticiones:'',
           set:''
         },
         {
-          dia:'',
+          dia:'Sabado',
           musculo:'',
           repeticiones:'',
           set:''
         },
         {
-          dia:'',
+          dia:'Domingo',
           musculo:'',
           repeticiones:'',
           set:''
